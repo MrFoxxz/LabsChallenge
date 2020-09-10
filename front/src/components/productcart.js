@@ -6,7 +6,7 @@ const ProductCart = (props) => {
         <div>
             <h1>imgen</h1>
             <h1>{props.producto}</h1>
-            <h3>Precio</h3>
+            <h3>props.price</h3>
         </div>
     )
     

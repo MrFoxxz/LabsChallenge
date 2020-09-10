@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 //Componentes
-import Product from "./components/product.js";
+import Product from "./components/page.js";
 
 ReactDOM.render(
-  <React.StrictMode>
+  
+  <BrowserRouter>
     <Product/>
-  </React.StrictMode>,
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
