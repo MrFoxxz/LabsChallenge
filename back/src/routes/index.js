@@ -6,8 +6,8 @@ const fetch = require("node-fetch")
     res.json({ 'Title': 'Hello World' });
 }); */
 
-router.get('/search', async (req, res) => {
-    const url = `https://api.mercadolibre.com/sites/MLA/search?q=${req.query.query}`
+router.get('/api/search', async (req, res) => {
+    const url = `https://api.mercadolibre.com/sites/MLA/search?q=${req.query.q}`
     const response = await fetch(url);
     const json = await response.json();
     res.json(json)

@@ -1,18 +1,13 @@
-import React, { Component} from "react"
-//Containers (Componentes tontos)
-import ProductCart from "./productdetails.js"
-import ProductDetails from "./productcart.js"
+import React, { Component } from "react"
+import Routes from "../routes.js"
 
-class Product extends Component{
+class Page extends Component{
 
     render() {
         return(
-            <div>
-                <ProductCart producto="detalles"/>
-                <ProductDetails producto="carta"/>
-            </div>
+            <Routes />
         )
     }
 }
 
-export default Product;
+export default Page;
