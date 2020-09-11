@@ -7,7 +7,7 @@ const fetch = require("node-fetch")
 }); */
 
 router.get('/api/search', async (req, res) => {
-    const url = `https://api.mercadolibre.com/sites/MLA/search?q=${req.query.q}`
+    const url = `https://api.mercadolibre.com/sites/MLA/search?q=${req.query.q}&limit=10`
     const response = await fetch(url);
     const json = await response.json();
     res.json(json)

@@ -1,17 +1,15 @@
-import axios from "axios";
-export const GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS";
-export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
+import axios from 'axios';
 
-//Trae todos los productos
+export const PRODUCTS = 'PRODUCTS';
 
-export function getAllProduct(product) {
+export function getProducts(payload) {
     return function (dispatch) {
-      return axios.get(`http://localhost:3001/api/search/${product}`)
-        .then(ress => {
-          dispatch({ type: GET_ALL_PRODUCTS, payload: ress });
-        })
-        .catch(err => {
-          console.log(err)
-        });
+        axios.get(`http://localhost:3001/api/search?q=${payload}`)
+            .then((res) => res.data.results)
+            .then(data => {
+                dispatch({ type: PRODUCTS, payload: data });
+                console.log(data);
+            })
+            .catch(error => alert(error))
     }
-  }
+}

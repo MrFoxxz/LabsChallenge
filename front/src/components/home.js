@@ -1,13 +1,14 @@
 import React from "react"
 import SearchBar from "./searchbar.js";
+import Catalog from "./catalog.js";
 
-const Home = (props) => {
+const Home = () => {
     
     return(
         <div>
-            <h1>HOME</h1>
-            <SearchBar/>
-        </div>
+            <SearchBar />
+            <Catalog />
+    </div>
     )
 }
 

@@ -1,0 +1,8 @@
+.catalogue{
+    background-color: brown;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1 , auto);
+    align-items: start;
+    justify-content: space-around;
+}

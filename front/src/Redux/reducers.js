@@ -1,28 +1,17 @@
-import {GET_ALL_PRODUCTS, SEARCH_PRODUCT} from "./actions.js"
+import { PRODUCTS } from "./actions.js";
 
 const initialState = {
-  allproducts: [],
-  searchproduct: [],
-};
+    Products: []
+}
 
 function rootReducer(state = initialState, action) {
-
-  if (action.type === GET_ALL_PRODUCTS) {
-    return {
-      ...state,
-      allproducts: action.payload  //modifico allproducts del store, agregando todos los productos de la bd
+    switch (action.type) {
+        case PRODUCTS: {
+            return { ...state, Products: action.payload }
+        }
+        default:
+            return state;
     }
-  }
-
-  if (action.type === SEARCH_PRODUCT) {
-    return {
-      ...state,
-      searchproduct: action.payload  // modifico searchproduct del store, agregando los producto que machean
-    }
-  }
-
-  return state
 }
 
 export default rootReducer;
-

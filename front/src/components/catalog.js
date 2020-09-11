@@ -1,36 +1,32 @@
-import React, { Component} from "react"
-import axios from "axios"
+import React, { useEffect } from 'react';
+import { getProducts } from '../Redux/actions.js'
+import ProductCard from './productcard.js'
+import { useSelector, useDispatch } from "react-redux"
+import "../styles/catalog.css"
 
-//Containers (Componentes tontos)
-import List from "./list.js"
+const Catalog = () => {
 
+    const Products = useSelector(state => state.Products)
+    const dispatch = useDispatch()
 
-class Catalog extends Component{
+    useEffect(() => {
+        dispatch(getProducts());
+    }, [getProducts])
 
-    state = {
-        productos:[]
-    }
-
-    componentDidMount() {
-        axios.get(`http://localhost:3001/api/search?q={zapatillas}`)
-            .then(res => {
-                const productos = res.data.results;
-                console.log(productos);
-
-                this.setState({ productos : productos});
-            })
-            .catch(error => {console.log(error)})
-    };
-
-    render() {
-
-        const {productos} = this.state
-
-        return(
-            <List productos={productos}/>
-        )
-    }
+    return (
+        <div class="catalogue">
+            <button>anterior</button>
+            <button>siguiente</button>
+            {Products && Products.map(product =>
+                <ProductCard
+                    imagen={product.thumbnail}
+                    title={product.title}
+                    price={product.price}
+                    condition={product.condition}
+                    stock={product.available_quantity}
+                />)}
+        </div>
+    )
 }
-  
-export default (Catalog);
-  
+
+export default Catalog;

@@ -1,31 +1,30 @@
-import React from "react";
-import axios from 'axios'
+import React, { useState } from 'react';
+import { getProducts } from '../Redux/actions.js';
+import { useDispatch } from 'react-redux';
+
+
 
 export default function SearchBar() {
 
-    const handleSumit = function (e) {
+    const [input, setInput] = useState("");
+    const dispatch = useDispatch();
+
+    function submitSearch(e, data) {
         e.preventDefault();
 
-        axios.get(`http://localhost:3001/api/search?query=` + e.target.searchbar.value)
-        .then(res => {
-            console.log(res.data.results)
-        })
-        .catch(error => {console.log(error)})
-    };
+        dispatch(getProducts(data))
+    }
 
     return (
 
-        <nav>
-            <form onSubmit={handleSumit}>
-                <input
-                    type="text"
-                    placeholder="Buscar Producto"
-                    name="searchbar"
-                />
+        <form onSubmit={(e) => submitSearch(e, input)}>
+            <input placeholder="Buscar"  type="search" aria-label="Search" 
+                onChange={(e) => 
+                setInput(e.target.value)}
+            />
+            <button type="submit">Buscar</button>
+        </form>
 
-                <input type="submit" value="Buscar..." />
-            </form>
-            
-        </nav>
-    );
+    )
+
 }
