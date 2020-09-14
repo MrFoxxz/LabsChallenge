@@ -1,16 +1,37 @@
-import { PRODUCTS } from "./actions.js";
+import { PRODUCTS, CONDITION } from "./actions";
 
 const initialState = {
-    Products: []
+    currentproduct: "",
+    products: [],
+    currentoffset: "0",
+    currentsort: '',
+    condition: ''
 }
 
 function rootReducer(state = initialState, action) {
     switch (action.type) {
         case PRODUCTS: {
-            return { ...state, Products: action.payload }
+            return { ...state, 
+                currentproduct: action.payload.query,
+                products: action.payload.results,
+                currentoffset: action.payload.paging.offset,
+                currentsort: action.payload.sort
+            }
         }
+        case CONDITION: {
+            return {
+                ...state,
+                currentproduct: action.payload.query,
+                products: action.payload.results,
+                currentoffset: action.payload.paging.offset,
+                currentsort: action.payload.sort,
+                condition: action.payload.ITEM_CONDITION
+
+            }
+        }
+
         default:
-            return state;
+        return state;
     }
 }
 

@@ -11,14 +11,14 @@ export default function SearchBar() {
 
     function submitSearch(e, data) {
         e.preventDefault();
-
+        
         dispatch(getProducts(data))
     }
 
     return (
 
         <form onSubmit={(e) => submitSearch(e, input)}>
-            <input placeholder="Buscar"  type="search" aria-label="Search" 
+            <input placeholder="Buscar" type="search" aria-label="Search" 
                 onChange={(e) => 
                 setInput(e.target.value)}
             />
