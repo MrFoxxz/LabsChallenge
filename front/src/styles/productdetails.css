@@ -1,0 +1,18 @@
+.productcardD{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    width: 1000px;
+    padding-left: 30px;
+}
+.productimgD{
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+}
+.productdetailsD{
+    padding-left: 30px;
+    padding-bottom: 15px;
+}

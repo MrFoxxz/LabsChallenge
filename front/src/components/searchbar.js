@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { getProducts } from '../Redux/actions.js';
 import { useDispatch } from 'react-redux';
-
-
+import "../styles/catalog.css"
 
 export default function SearchBar() {
 
@@ -16,14 +15,15 @@ export default function SearchBar() {
     }
 
     return (
-
-        <form onSubmit={(e) => submitSearch(e, input)}>
-            <input placeholder="Buscar" type="search" aria-label="Search" 
+        <nav class="navbar navbar-dark bg-dark searchbar">
+        <form class="form-inline" onSubmit={(e) => submitSearch(e, input)}>
+            <input class="form-control mr-sm-2" placeholder="Buscar" type="search" aria-label="Search" 
                 onChange={(e) => 
                 setInput(e.target.value)}
             />
-            <button type="submit">Buscar</button>
+            <button class="btn btn-outline-info" type="submit">Buscar</button>
         </form>
+        </nav>
 
     )
 

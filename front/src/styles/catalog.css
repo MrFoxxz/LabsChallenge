@@ -6,3 +6,25 @@
     align-items: start;
     justify-content: space-around;
 }
+
+.searchbar{
+    display: flex;
+    justify-content: center;
+}
+
+.cajaproductos{
+    background-color: #343a40;
+    display: flex;
+}
+
+.buttons{
+    background-color: #343a40;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.nav-pills .nav-link {
+    border-radius: .25rem;
+    width: 180px;
+    margin-right: 9px;
+}

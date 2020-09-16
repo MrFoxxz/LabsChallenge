@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 export const PRODUCTS = 'PRODUCTS';
-export const CONDITION = 'CONDITION'
+export const CONDITION = 'CONDITION';
+export const DETAILS = 'DETAILS';
 
 /* export const NEXT = 'NEXT';
 export const PREV = 'PREV'; */
@@ -12,7 +13,6 @@ export function getProducts(payload, offset = 0, sort) {
             .then((res) => res.data)
             .then(data => {
                 dispatch({ type: PRODUCTS, payload: data });
-                console.log(data);
             })
             .catch(error => alert(error))
     }
@@ -24,7 +24,17 @@ export function getCondition(payload, offset = 0, sort, condition) {
             .then((res) => res.data)
             .then(data => {
                 dispatch({ type: CONDITION, payload: data });
-                console.log(data);
+            })
+            .catch(error => alert(error))
+    }
+}
+
+export function getDetails(id) {
+    return function (dispatch) {
+        axios.get(`http://localhost:3001/api/item/${id}`)
+            .then((res) => res.data)
+            .then(data => {
+                dispatch({ type: DETAILS, payload: data });
             })
             .catch(error => alert(error))
     }

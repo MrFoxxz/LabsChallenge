@@ -20,4 +20,12 @@ router.get('/api/search/condition', async (req, res) => {
     res.json(json)
 });
 
+router.get('/api/item/:id', async (req, res) => {
+    id=req.params.id
+    const url = `https://api.mercadolibre.com/items/${id}`
+    const response = await fetch(url);
+    const json = await response.json();
+    res.json(json)
+});
+
 module.exports = router;
