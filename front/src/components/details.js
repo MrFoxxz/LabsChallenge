@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { getDetails } from '../Redux/actions.js'
 import { useSelector, useDispatch } from "react-redux"
 import ProductDetails from './productdetails.js'
+import Header from './header.js';
 
 const Details = (Product) => {
 
@@ -15,6 +16,7 @@ const Details = (Product) => {
 
     return (
         <div class="catalogue">
+            <Header/>
                {
                 <ProductDetails   
                     imagen={Details.thumbnail}

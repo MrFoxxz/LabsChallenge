@@ -1,5 +1,4 @@
 .catalogue{
-    background-color: brown;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(1 , auto);
@@ -13,18 +12,22 @@
 }
 
 .cajaproductos{
-    background-color: #343a40;
     display: flex;
 }
 
 .buttons{
-    background-color: #343a40;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     border-radius: 0;
+    margin-top: 10px;
 }
 
 .nav-pills .nav-link {
     border-radius: .25rem;
     width: 180px;
     margin-right: 9px;
+}
+.cataloguesearch{
+    margin-left: 320px;
+    margin-top: 60px;
+    margin-bottom: 250px;
 }

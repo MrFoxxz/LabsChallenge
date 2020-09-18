@@ -50,7 +50,7 @@ const Catalog = () => {
                 </div>
 
                 <div>
-                {!Products.length ? <div class="catalogue"><h1>Realice su busqueda</h1></div> : 
+                {!Products.length ? <div class="cataloguesearch"><h1>Realice su busqueda</h1></div> : 
                     Products.map(product =>
                         <ProductCard
                         imagen={product.thumbnail}
@@ -64,10 +64,10 @@ const Catalog = () => {
             </div>
             <ul class="pagination justify-content-center buttons">
                 <li class="page-item">
-                <a class="page-link" onClick={() => { dispatch(getProducts(Product, Page - 10, Sort)) }} >Previous</a>
+                <a class="page-link" onClick={() => { dispatch(getProducts(Product, Page - 15, Sort)) }} >Previous</a>
                 </li>
                 <li class="page-item">
-                <a class="page-link" onClick={() => { dispatch(getProducts(Product, Page + 10, Sort)) }}>Next</a>
+                <a class="page-link" onClick={() => { dispatch(getProducts(Product, Page + 15, Sort)) }}>Next</a>
                 </li>
             </ul>
         </div>
