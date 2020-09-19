@@ -31,3 +31,12 @@
     margin-top: 60px;
     margin-bottom: 250px;
 }
+.detailsbox{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+    justify-content: center;
+}
+.imgbox{
+    width: min-content;
+}

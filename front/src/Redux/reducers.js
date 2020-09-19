@@ -6,7 +6,8 @@ const initialState = {
     currentoffset: "0",
     currentsort: '',
     condition: '',
-    details:[]
+    details:[],
+    pictures:[]
 }
 
 function rootReducer(state = initialState, action) {
@@ -34,6 +35,7 @@ function rootReducer(state = initialState, action) {
         case DETAILS: {
             return { ...state, 
                 details: action.payload,
+                pictures: action.payload.pictures
             }
         }
 

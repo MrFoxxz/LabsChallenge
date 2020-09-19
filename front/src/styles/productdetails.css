@@ -1,11 +1,10 @@
 .productcardD{
-    background-color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 10px;
-    width: 1000px;
     padding-left: 30px;
+    height: 250px;
 }
 .productimgD{
     margin: 10px;
